@@ -1,0 +1,141 @@
+/* styles.css */
+
+/* Enables smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base body styling for readability and mobile padding */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0 10px; /* Mobile-friendly horizontal padding */
+  background: linear-gradient(to bottom, #1a1a2e, #16213e); /* Deep gradient background */
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Header section with background image, overlay, and fade-in animation */
+header {
+  position: relative;
+  text-align: center;
+  padding: 60px 20px;
+  background: url('images/background.png') center/cover no-repeat; /* Hero image */
+  background-color: #1a1a2e; /* Fallback color */
+  animation: fadeIn 1.5s ease-in; /* Smooth entrance */
+}
+
+/* Semi-transparent dark overlay to improve text contrast */
+header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Overlay darkness */
+  z-index: 0; /* Behind content */
+}
+
+/* Ensures header content sits above the overlay */
+header > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Fade-in animation keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Logo or featured image styling */
+header img {
+  width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Soft depth */
+}
+
+/* Main heading style */
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.2em;
+}
+
+/* Subheading or section title style */
+h2 {
+  font-size: 1.5em;
+  color: #f0a500; /* Warm accent color */
+}
+
+/* Call-to-action button styling */
+.cta-buttons a {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 24px;
+  background: #f0a500; /* Primary button color */
+  color: #000;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+/* Button hover effect for interactivity */
+.cta-buttons a:hover {
+  background: #ffd369; /* Lighter hover tone */
+  color: #000;
+  transform: scale(1.05); /* Slight zoom */
+}
+
+/* Section layout for content blocks */
+section {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Responsive grid layout for feature cards or prompt categories */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible columns */
+  gap: 20px;
+}
+
+/* Footer styling for closing message or links */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #0f3460; /* Deep footer tone */
+}
+
+/* Footer link styling */
+footer a {
+  color: #f0a500;
+  text-decoration: none;
+}
+
+/* Responsive tweaks for smaller screens */
+@media (max-width: 600px) {
+  header {
+    padding: 40px 10px; /* Reduced padding */
+  }
+
+  header img {
+    width: 150px; /* Smaller logo */
+  }
+
+  h1 {
+    font-size: 2em; /* Scaled heading */
+  }
+
+  h2 {
+    font-size: 1.2em; /* Scaled subheading */
+  }
+
+  .cta-buttons a {
+    padding: 10px 20px;
+    font-size: 0.9em; /* Smaller button text */
+  }
+}
