@@ -1,141 +1,77 @@
 /* styles.css */
 
-/* Enables smooth scrolling for anchor links */
-html {
-  scroll-behavior: smooth;
-}
+/* ============================= / / 🎨 Theme Variables */ :root { --accent: #f0a500; --accent-hover: #ffd369; --donation: #f7931a; --donation-hover: #ffa94d; --bg-dark: #1a1a2e; --bg-footer: #0f3460; --text-light: #fff; --text-dark: #000; --font-main: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif; }
 
-/* Base body styling for readability and mobile padding */
-body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0 10px; /* Mobile-friendly horizontal padding */
-  background: linear-gradient(to bottom, #1a1a2e, #16213e); /* Deep gradient background */
-  color: #fff;
-  line-height: 1.6;
-}
+/* ============================= / / 🧭 Base Styles */ html { scroll-behavior: smooth; }
 
-/* Header section with background image, overlay, and fade-in animation */
-header {
-  position: relative;
-  text-align: center;
-  padding: 60px 20px;
-  background: url('images/background.png') center/cover no-repeat; /* Hero image */
-  background-color: #1a1a2e; /* Fallback color */
-  animation: fadeIn 1.5s ease-in; /* Smooth entrance */
-}
+body { font-family: var(--font-main); margin: 0; padding: 0 10px; background: linear-gradient(to bottom, var(--bg-dark), #16213e); color: var(--text-light); line-height: 1.6; }
 
-/* Semi-transparent dark overlay to improve text contrast */
-header::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Overlay darkness */
-  z-index: 0; /* Behind content */
-}
+/* ============================= / / 🖼 Header */ header { position: relative; text-align: center; padding: 60px 20px; background: url('images/background.png') center/cover no-repeat; background-color: var(--bg-dark); animation: fadeIn 1.5s ease-in; }
 
-/* Ensures header content sits above the overlay */
-header > * {
-  position: relative;
-  z-index: 1;
-}
+header::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 0; }
 
-/* Fade-in animation keyframes */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+header > * { position: relative; z-index: 1; }
 
-/* Logo or featured image styling */
-header img {
-  width: 200px;
-  height: auto;
-  display: block;
-  margin: 0 auto 1rem auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Soft depth */
-}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-/* Main heading style */
-h1 {
-  font-size: 2.5em;
-  margin-bottom: 0.2em;
-}
+header img { width: 200px; height: auto; display: block; margin: 0 auto 1rem auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); }
 
-/* Subheading or section title style */
-h2 {
-  font-size: 1.5em;
-  color: #f0a500; /* Warm accent color */
-}
+/* ============================= / / 🧠 Typography */ h1 { font-size: 2.5em; margin-bottom: 0.2em; }
 
-/* Call-to-action button styling */
-.cta-buttons a {
-  display: inline-block;
-  margin: 10px;
-  padding: 12px 24px;
-  background: #f0a500; /* Primary button color */
-  color: #000;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: all 0.3s ease; /* Smooth hover effect */
-}
+h2 { font-size: 1.5em; color: var(--accent); }
 
-/* Button hover effect for interactivity */
-.cta-buttons a:hover {
-  background: #ffd369; /* Lighter hover tone */
-  color: #000;
-  transform: scale(1.05); /* Slight zoom */
-}
+/* ============================= / / 🚀 CTA Buttons */ .cta-buttons a { display: inline-block; margin: 10px; padding: 12px 24px; background: var(--accent); color: var(--text-dark); text-decoration: none; border-radius: 6px; font-weight: bold; transition: all 0.3s ease; }
 
-/* Section layout for content blocks */
-section {
-  padding: 40px 20px;
-  max-width: 800px;
-  margin: auto;
-}
+.cta-buttons a:hover, .cta-buttons a:focus { background: var(--accent-hover); transform: scale(1.05); outline: 2px solid var(--accent); outline-offset: 2px; }
 
-/* Responsive grid layout for feature cards or prompt categories */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible columns */
-  gap: 20px;
-}
+.btc-button { display: inline-block; padding: 12px 24px; background-color: var(--donation); color: white; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background-color 0.3s; margin-top: 20px; }
 
-/* Footer styling for closing message or links */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #0f3460; /* Deep footer tone */
-}
+.btc-button:hover, .btc-button:focus { background-color: var(--donation-hover); outline: 2px solid var(--donation); outline-offset: 2px; }
 
-/* Footer link styling */
-footer a {
-  color: #f0a500;
-  text-decoration: none;
-}
+/* ============================= / / 📦 Sections */ section { padding: 40px 20px; max-width: 800px; margin: auto; }
 
-/* Responsive tweaks for smaller screens */
-@media (max-width: 600px) {
-  header {
-    padding: 40px 10px; /* Reduced padding */
-  }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
 
-  header img {
-    width: 150px; /* Smaller logo */
-  }
+/* ============================= / / 🧩 Footer */ footer { text-align: center; padding: 20px; background: var(--bg-footer); }
 
-  h1 {
-    font-size: 2em; /* Scaled heading */
-  }
+footer a { color: var(--accent); text-decoration: none; }
 
-  h2 {
-    font-size: 1.2em; /* Scaled subheading */
-  }
+/* ============================= / / ₿ Bitcoin Section */ #donate { text-align: center; }
 
-  .cta-buttons a {
-    padding: 10px 20px;
-    font-size: 0.9em; /* Smaller button text */
-  }
-}
+#donate h2 { color: var(--accent); }
+
+.qr-code { width: 200px; height: 200px; margin: 20px auto; display: block; border: 1px solid #ccc; border-radius: 8px; }
+
+.btc-copy { margin: 10px auto; display: flex; justify-content: center; align-items: center; gap: 10px; }
+
+.btc-copy input { padding: 10px; width: 300px; border: 1px solid #ccc; border-radius: 6px; text-align: center; font-size: 1em; }
+
+.btc-copy button { padding: 10px 16px; background-color: var(--donation); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
+
+/* ============================= / / 🎉 Thank You Popup */ #thank-you-popup { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 30px; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.2); z-index: 1000; text-align: center; opacity: 0; transition: opacity 0.5s ease; color: var(--text-dark); max-width: 90%; width: 400px; }
+
+#thank-you-popup.visible { display: block; opacity: 1; }
+
+.copy-toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--donation); color: white; padding: 10px 20px; border-radius: 6px; font-weight: bold; box-shadow: 0 2px 8px rgba(0,0,0,0.3); z-index: 1001; }
+
+#thank-you-popup button { padding: 10px 20px; background-color: var(--donation); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
+
+/* ============================= / / 🕶 Overlay */ #overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 999; }
+
+#overlay.visible { display: block; }
+
+/* ============================= / / 🧰 Utility Classes */ .hidden { display: none !important; }
+
+/* ============================= / / 📱 Responsive Tweaks */ @media (max-width: 600px) { header { padding: 40px 10px; }
+
+header img { width: 150px; }
+
+h1 { font-size: 2em; }
+
+h2 { font-size: 1.2em; }
+
+.cta-buttons a { padding: 10px 20px; font-size: 0.9em; }
+
+.btc-copy { flex-direction: column; }
+
+.btc-copy input, .btc-button { width: 100%; } }
