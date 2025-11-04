@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Submit Your Track Brief — Unlock My AI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fefefe;
+      color: #222;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    form {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    fieldset {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    legend {
+      font-weight: bold;
+      font-size: 1.2rem;
+      padding: 0 0.5rem;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .generate-btn {
+      margin-top: 1rem;
+      background-color: #111;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1rem;
+      font-size: 0.9rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      display: block;
+      margin: 2rem auto 0;
+      background-color: #111;
+      color: #fff;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Submit Your Track Brief</h1>
+
+  <form>
+    <fieldset>
+      <legend>🎤 LYRICS</legend>
+      <label for="lyrics">Enter lyrics</label>
+      <textarea id="lyrics" name="lyrics" rows="5" placeholder="Paste or write your lyrics here…"></textarea>
+      <button type="button" class="generate-btn" onclick="alert('Lyric generation coming soon!')">Generate lyrics</button>
+    </fieldset>
+
+    <fieldset>
+      <legend>🎼 INSTRUMENTAL</legend>
+      <label for="instrumental">Describe your instrumental preferences</label>
+      <textarea id="instrumental" name="instrumental" rows="4" placeholder="E.g., acoustic guitar, synth pads, lo-fi drums…"></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>🎧 STYLES</legend>
+      <label for="styles">Enter your preferred style</label>
+      <input type="text" id="styles" name="styles" placeholder="E.g., reggae, cinematic, mellow, male voice, grunge…" />
+    </fieldset>
+
+    <fieldset>
+      <legend>⚙️ ADVANCED OPTION</legend>
+      <label for="exclude">Enter styles you don’t want</label>
+      <input type="text" id="exclude" name="exclude" placeholder="E.g., autotune, fast tempo, trap…" />
+    </fieldset>
+
+    <fieldset>
+      <legend>🎵 SONG TITLE</legend>
+      <label for="title">Enter the name of your creation</label>
+      <input type="text" id="title" name="title" placeholder="E.g., ‘Rise with the Tide’" />
+    </fieldset>
+
+    <button class="submit-btn" type="submit">Submit Brief</button>
+  </form>
+
+</body>
+</html>
